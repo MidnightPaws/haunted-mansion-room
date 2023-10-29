@@ -25,6 +25,11 @@ app.get('/', async function(req, res) {
     }
 });
 
+// app.get("public/Screens/Gamimage.png", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./uploads/image.png"));
+// });
+
+
 app.get('/challenge_one', function(req, res){
   res.cookie('red', 1);
 });
@@ -74,7 +79,7 @@ app.get('/check_if_user_collected_all', function(req, res) {
 }});
 
 app.get('/on_to_the_next', (req, res) => {
-    res.redirect('https://www.google.com');
+    res.redirect('https://haunted-house-hackathon.vercel.app/');
 });
 
 

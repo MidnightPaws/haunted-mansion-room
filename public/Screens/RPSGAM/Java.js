@@ -14,7 +14,7 @@ var yourMoveImage = document.getElementById("yourMove");
 var theirMoveImage = document.getElementById("theirMove");
 var yourMoveText = document.getElementById("yourMoveText");
 var theirMoveText = document.getElementById("theirMoveText");
-var mistake = document.getElementById("Mistakes")
+
 
 var userChoice = ""
 
@@ -94,7 +94,8 @@ function loss() {
 
 function tie() {
   gameEnd()
-
+   playAgainButton.style.display = "block";
+  continueButton.style.display = "none";
   console.log("You Tie")
   resultText.innerHTML = "You Tie"
 
@@ -119,6 +120,7 @@ continueButton.addEventListener("click", function() {
   console.log("Continue Button is clicked");
 })
 
+//fetch
 fetch('/user_did_mistake')
   .then(response => {
     if (response.ok) {
@@ -133,4 +135,23 @@ fetch('/user_did_mistake')
   .catch(error => {
     console.error('Error fetching data:', error);
   });
+
+
+
+function getCookie(c_name)
+{
+    var i,x,y,ARRcookies=document.cookie.split(";");
+
+    for (i=0;i<ARRcookies.length;i++)
+    {
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if (x==c_name)
+        {
+            return unescape(y);
+        }
+     }
+}
+
 

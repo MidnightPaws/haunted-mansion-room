@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Cat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+  <style>
+
+      #sheet{
+
+        position: absolute;
+        left: center;
+        top: 20%;
+        object-fit: cover;
+
+      }
+
+      h2 {
+        color: #ffffff;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+      }
+
+      body {
+        background-image: url('./concert.jpeg')
+      }
+
+      body {
+        background-size: cover;
+      }
+    .white-key label {
+      font-weight: 800
+    }
+
+    h2:hover {
+      text-shadow: 2px 2px #858585;
+    }
+
+  </style>
+<body>
+
+    <div class="piano">
+
+        <div class="white-key" data-note="C"></div>
+      <div class="white-key" data-note="D"></div>
+        <div class="white-key" data-note="E"></div>
+        <div class="white-key" data-note="F"></div>
+        <div class="white-key" data-note="G"></div>
+        <div class="white-key" data-note="A"></div>
+        <div class="white-key" data-note="B"></div>
+        <div class="white-key" data-note="C2"></div>
+        <div class="black-key" data-note="C#"></div>
+        <div class="black-key" data-note="D#"></div>
+        <div class="black-key" data-note="F#"></div>
+        <div class="black-key" data-note="G#"></div>
+        <div class="black-key" data-note="A#"></div>
+    </div>
+
+  <img id="sheet" src="./sheet.png"></img>
+  <a href = "../homeRoomScreen.html"/>
+    <h2>
+      Go Back
+    </h2>
+  </a>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

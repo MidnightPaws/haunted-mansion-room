@@ -19,16 +19,18 @@ var mistakes = getCookie("mistakes");
 var startTime, endTime;
 var nekoMusic = new Audio('MAZES/NekoMusic.mp3');
 
-const c = document.getElementById("myCanvas");
-const ctx = c.getContext('2d', { willReadFrequently: true });
 const img = document.getElementById("scream");
-console.log(mistakes)
 if(mistakes > 2){
   img.src = "MAZES/mazeHard.png";
 }
 else if(mistakes >= 8){
   img.src = "MAZES/mazeIMPOSSIBLE.png";
 }
+
+
+const c = document.getElementById("myCanvas");
+const ctx = c.getContext('2d', { willReadFrequently: true });
+
 img.style.display = "none";
 ctx.drawImage(img, 10, 10);
 
@@ -149,7 +151,20 @@ function initGame(){
 function userFinished(){
   alert("You Finished!");
   isRunningRound = false;
-  
+  fetch('/challenge_for')
+  .then(response => {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  })
+  .then(data => {
+    console.log(data); // Log the response from the server
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 }
 
 function userFailWhite(){
@@ -237,6 +252,20 @@ function surprise(){
   // audio.play();
   countdown(8);
   // alert(`You Died!\nYou made ${document.cookie.mistakes} mistakes`);
+  fetch('/user_start_over')
+  .then(response => {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error('Network response was not ok');
+    }
+  })
+  .then(data => {
+    console.log(data); // Log the response from the server
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
 }
 // surprise();
 

@@ -14,15 +14,31 @@ app.get('/', async function(req, res) {
       console.log("ASDSA");
         // Cookie doesn't exist, create it
         await res.cookie('mistakes', 0);
-      await res.cookie('red', 1);
+      await res.cookie('red', 0);
       await res.cookie('blue', 0);
       await res.cookie('yellow', 0);
       await res.cookie('finalie', 0);
-      await res.sendFile(path.join(__dirname, 'public', 'TESTING/index.html'));
+      await res.sendFile(path.join(__dirname, 'public', 'index.html'));
     } else {
         // Cookie exists
         res.sendFile(path.join(__dirname, 'public', 'TESTING/index.html'));
     }
+});
+
+app.get('/challenge_one', function(req, res){
+  res.cookie('red', 1);
+});
+
+app.get('/challenge_two', function(req, res){
+  res.cookie('blue', 1);
+});
+
+app.get('/challenge_thr', function(req, res){
+  res.cookie('yellow', 1);
+});
+
+app.get('/challenge_for', function(req, res){
+  res.cookie('finalie', 1);
 });
 
 app.get('/user_start_over', function(req, res){
@@ -56,5 +72,10 @@ app.get('/check_if_user_collected_all', function(req, res) {
   }
     res.cookie('collectedAll',false);
 }});
+
+app.get('/on_to_the_next', (req, res) => {
+    res.redirect('https://www.google.com');
+});
+
 
 app.listen(3000);

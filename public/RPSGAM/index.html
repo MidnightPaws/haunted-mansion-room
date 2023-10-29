@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="choiceScreen">
+    <!-- headers -->
+    <h1>Rock,Paper,Scissors</h1>
+
+    <!-- Buttons  -->
+    <!-- ID is for identifying the particular button -->
+    <img class="choice" src="Rock.jpg" id="rockButton" />
+    <img class="choice" src="Paper.jpg" id="paperButton" />
+    <img class="choice" src="Scissors.jpg" id="scissorButton" />
+
+    <button id="paperButton">Paper</button>
+    <button id="scissorButton">Scissors</button>
+  </div>
+  <div style="display: none" id="resultScreen">
+    <h1 id="resultText">You Result</h1>
+    <div>
+      <p id="yourMoveText"></p>
+
+    <img class="choice" src="Rock.jpg" id="yourMove" />
+    </div>
+    <div>
+      <p id="theirMoveText"></p>
+    <img class="choice" src="Paper.jpg" id="theirMove" />
+    </div>
+    <!-- src= source of the image -->
+    <button id="playAgainButton">Play Again</button>
+    
+    <a href="/Screens/homeRoomScreen.html">
+      <button id="continueButton">Continue</button>
+    </a>
+  
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

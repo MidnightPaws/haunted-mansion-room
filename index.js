@@ -9,15 +9,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 //Landing page
-app.get('/', function(req, res) {
+app.get('/', async function(req, res) {
     if (req.cookies.mistakes === undefined) {
+      console.log("ASDSA");
         // Cookie doesn't exist, create it
-        res.cookie('mistakes', 0);
-        res.cookie('red', 1);
-        res.cookie('blue', 0);
-        res.cookie('yellow', 0);
-        res.cookie('finalie', 0);
-        res.sendFile(path.join(__dirname, 'public', 'TESTING/index.html'));
+        await res.cookie('mistakes', 0);
+      await res.cookie('red', 1);
+      await res.cookie('blue', 0);
+      await res.cookie('yellow', 0);
+      await res.cookie('finalie', 0);
+      await res.sendFile(path.join(__dirname, 'public', 'TESTING/index.html'));
     } else {
         // Cookie exists
         res.sendFile(path.join(__dirname, 'public', 'TESTING/index.html'));
@@ -49,10 +50,11 @@ app.get('/check_if_user_collected_all', function(req, res) {
     if (blue){
       if(yellow){
         if(finalie){
-          res.send("You win!")
+          res.cookie('collectedAll',true);
       }
     }
   }
-});
+    res.cookie('collectedAll',false);
+}});
 
 app.listen(3000);

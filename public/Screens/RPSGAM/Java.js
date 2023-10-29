@@ -15,7 +15,6 @@ var theirMoveImage = document.getElementById("theirMove");
 var yourMoveText = document.getElementById("yourMoveText");
 var theirMoveText = document.getElementById("theirMoveText");
 
-
 var userChoice = ""
 
 //Add an event listener to the rock button
@@ -94,7 +93,7 @@ function loss() {
 
 function tie() {
   gameEnd()
-  playAgainButton.style.display = "block";
+   playAgainButton.style.display = "block";
   continueButton.style.display = "none";
   console.log("You Tie")
   resultText.innerHTML = "You Tie"

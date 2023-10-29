@@ -25,10 +25,21 @@ app.get('/', async function(req, res) {
     }
 });
 
-// app.get("public/Screens/Gamimage.png", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./uploads/image.png"));
-// });
+app.get("mazeHard.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/Screens/GAMYGAM/MAZES/mazeHard.png"));
+});
 
+app.get("mazeIMPOSSIBLE.png", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/Screens/GAMYGAM/MAZES/mazeIMPOSSIBLE.png"));
+});
+
+app.get("jumpscare.wav", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/Screens/GAMYGAM/MAZES/jumpscare.wav"));
+});
+
+app.get("NekoMusic.mp3", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/Screens/GAMYGAM/MAZES/NekoMusic.mp3"));
+});
 
 app.get('/challenge_one', function(req, res){
   res.cookie('red', 1);
